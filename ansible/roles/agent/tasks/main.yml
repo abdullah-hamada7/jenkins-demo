@@ -1,0 +1,9 @@
+- name: Build custom Jenkins agent image
+  shell: |
+    cd /opt/jenkins
+    docker build -t abdullahhamada7/jenkins-docker-agent:latest .
+
+- name: Push image to Docker Hub
+  shell: |
+    docker login -u "{{ docker_user }}" -p "{{ docker_pass }}"
+    docker push abdullahhamada7/jenkins-docker-agent:latest

@@ -1,0 +1,7 @@
+- name: Setup Jenkins CI/CD environment
+  hosts: jenkins
+  become: true
+  roles:
+    - docker
+    - jenkins
+    - agent
